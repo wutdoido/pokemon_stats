@@ -10,3 +10,5 @@ Possible future expansions on this: Smogon uses a tiering system for singles whi
 
 MDate.py is not really used here except for storing date information, but it's mostly a small test in inheritence and overloading that I wanted to do. 
 
+Update: For relevant information, should filter full_data["rating"] == number, where number one of [0, 1500, 1630, 1760]. Avoiding doing so will give incorrect information as the data could be multiplied more than it should be.
+Also, there's currently a bug where the initially built data doesn't convert the numbers to a non-string data type, so will have to run test.py twice for correct information.
