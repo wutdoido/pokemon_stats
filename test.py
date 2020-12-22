@@ -7,12 +7,13 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from MDate import MDate
 
-poke = PokemonStats("Umbreon")
-poke.get_stats("vgc")
-sns.set(rc={'figure.figsize':(9, 12)})
-sns.barplot(x="usage_amount", y=poke.full_data.index, data=poke.full_data, ci=None)
+poke = PokemonStats("Volcarona")
+data = poke.full_data[poke.full_data["rating"] == 0]
+sns.set(rc={'figure.figsize':(14, 12)})
+sns.barplot(x=data.index, y="usage_amount", data=data, ci=None)
 plt.title("{} Usage".format(poke.name))
-plt.ylabel("Month")
-plt.xlabel("Usage amount")
+plt.xlabel("Month")
+plt.xticks(rotation=90)
+plt.ylabel("Usage amount")
 plt.tight_layout()
 plt.show()
